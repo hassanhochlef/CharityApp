@@ -70,6 +70,7 @@ public class produitservice {
 
 PreparedStatement statement = cnx.prepareStatement(sql);
 statement.setString(1,id_prod);
+ste.executeUpdate(); 
 
 int rowsDeleted = statement.executeUpdate();
 if (rowsDeleted ==1) {
