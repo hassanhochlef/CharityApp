@@ -14,10 +14,10 @@ public class ConnexionTest {
     public static void main(String[] args) {
         Myconnection mc= Myconnection.getInstance();
         produitservice prod = new produitservice();
-        Produit p1 = new Produit("foulen","benfoulen");
+        Produit p1 = new Produit("1","foulen");
         //prod.ajouterProduit(p1);
         //System.out.println(prod.afficherProduit());
-        //prod.ModifierProduit("foulen","benfoulekkkn");
+        //prod.ModifierProduit("1","foulekkkn");
         prod.SupprimerProduit("1"); 
     }
     
