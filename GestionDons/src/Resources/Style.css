@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 15, 2021, 11:46:29 AM
+    Author     : Hassan
+*/
+
+.side {
+    -fx-background-color: whitesmoke;
+   
+}
+.back {
+    
+    -fx-background-color: linear-gradient(#7A7978 , #87CBAC );
+
+}
+.pane {
+    -fx-background-color: #203A40;
+    
+    
+}
+.text {
+    -fx-text-fill: white;
+}
+.tbl {
+    
+    -fx-background-color: linear-gradient(left, #C6E7D8, #87CBAC);
+  -fx-background-color: linear-gradient(to right, #C6E7D8, #87CBAC);
+  -fx-font-family: 'Roboto', sans-serif;
+
+        
+}
+
+
+
+
+
+ 
