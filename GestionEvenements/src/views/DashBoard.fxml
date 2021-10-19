@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashBoardController">
+    <children>
+      <VBox fillWidth="false" layoutX="14.0" layoutY="72.0" prefHeight="642.0" prefWidth="645.0" spacing="20.0">
+         <children>
+            <HBox prefHeight="211.0" prefWidth="625.0" style="-fx-background-radius: 30; -fx-background-color: #EADDA0;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="151.0" prefWidth="418.0" spacing="15.0">
+                     <children>
+                        <Label text="A LA RECHERCHE D'UNE BONNE CAUSE" textFill="WHITE">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="POUR FAIRE UN DON ?" textFill="WHITE">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="PARTICIPER A UN EVENEMENT MAINTENANT !" textFill="WHITE">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnParticipEvent" prefHeight="45.0" prefWidth="237.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Participer à un évenement +" textFill="WHITE">
+                           <font>
+                              <Font name="Ebrima Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <ImageView fitHeight="147.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/—Pngtree—cute%20cartoon%20charity%20dedication_4975019.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="30.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="549.0" spacing="40.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                     <children>
+                        <Label text="Evenements">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Totals">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              
+                                    <Label fx:id="totalEvents">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow />
+                     </effect></VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                     <children>
+                        <Label text="Evenements">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Actifs">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="actifEvents">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow />
+                     </effect></VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="165.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                     <children>
+                        <Label text="Nombre">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Participants">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="nbreParticipants">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="165.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                     <children>
+                        <Label text="Dons">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Collectés">
+                           <font>
+                              <Font name="Ebrima" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="donCollecte">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="15.0" right="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="262.0" prefWidth="639.0" spacing="20.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="262.0" prefWidth="204.0">
+                     <children>
+                        <Label text="Associations Récemment">
+                           <font>
+                              <Font name="Ebrima Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label text="Actifs">
+                           <font>
+                              <Font name="Ebrima Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="80.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="245.0" prefWidth="393.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="assocLabel1" alignment="CENTER" prefHeight="46.0" prefWidth="322.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                           <font>
+                              <Font name="Ebrima Bold" size="21.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Label>
+                        <Label fx:id="assocLabel2" alignment="CENTER" layoutX="44.0" layoutY="10.0" prefHeight="46.0" prefWidth="322.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                           <font>
+                              <Font name="Ebrima Bold" size="21.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Label>
+                        <Label fx:id="assocLabel3" alignment="CENTER" layoutX="44.0" layoutY="37.0" prefHeight="46.0" prefWidth="322.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+                           <font>
+                              <Font name="Ebrima Bold" size="21.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="20.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fillWidth="false" layoutX="685.0" layoutY="108.0" prefHeight="520.0" prefWidth="300.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+         <children>
+            <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="62.0" prefWidth="378.0">
+               <children>
+                  <Label text="Participants Récents">
+                     <font>
+                        <Font name="Ebrima Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

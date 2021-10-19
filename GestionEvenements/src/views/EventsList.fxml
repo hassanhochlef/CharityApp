@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventsListController">
+    <children>
+      <TableView fx:id="eventTable" layoutX="123.0" layoutY="103.0" prefHeight="389.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colCategorie" prefWidth="75.0" text="Catégorie" />
+            <TableColumn fx:id="colCause" prefWidth="75.0" text="Cause" />
+            <TableColumn fx:id="colParticip" prefWidth="127.0" text="Nombre_Participants" />
+            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="colMontant" prefWidth="119.0" text="Montant_Collecté" />
+            <TableColumn fx:id="colDescription" prefWidth="119.0" text="Description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
