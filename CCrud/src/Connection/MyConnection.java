@@ -12,7 +12,7 @@ import java.sql.*;
  * @author Hassan
  */
 public class MyConnection {
-    public String url="jdbc:mysql://localhost:3306/crud";
+    public String url="jdbc:mysql://localhost:3306/bugbustersprojet";
     public String user="root";
     public String password="";
     public Connection cnx;

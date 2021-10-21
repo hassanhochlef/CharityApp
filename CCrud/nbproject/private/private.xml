@@ -3,11 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Hassan/Desktop/images/Crud/src/test/Main.java</file>
-            <file>file:/C:/Users/Hassan/Desktop/images/Crud/src/Connection/MyConnection.java</file>
-            <file>file:/C:/Users/Hassan/Desktop/images/Crud/src/Service/DonationCrud.java</file>
-            <file>file:/C:/Users/Hassan/Desktop/images/Crud/src/esprit1/Esprit1.java</file>
-            <file>file:/C:/Users/Hassan/Desktop/images/Crud/src/esprit1/Donation.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Resources/Style.css</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Connection/MyConnection.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Entities/User.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Entities/Don.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Views/DonsScreen.fxml</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Controllers/StatsDashController.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Views/Item.fxml</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Controllers/GestionDons.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Entities/EventUserPK.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/nbproject/jfx-impl.xml</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Controllers/DonsScreenController.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Views/StatsDash.fxml</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Service/DonationCrud.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Entities/Besoin.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Controllers/ItemController.java</file>
+            <file>file:/C:/Users/Hassan/Desktop/images/GestionDons/src/Service/progressCalculator.java</file>
         </group>
     </open-files>
 </project-private>
