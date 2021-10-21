@@ -13,7 +13,6 @@ import entities.Evenement;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 import javafx.collections.FXCollections;
@@ -69,7 +68,10 @@ public class AddEventController implements Initializable {
     @FXML
     private TableColumn<Evenement, Integer> colID;
     @FXML
+    private TableColumn<Evenement, Integer> colIDAssociation;
+    
     private TableColumn<Evenement, Integer> colIDAssoc;
+    
     @FXML
     private TableColumn<Evenement, String> colCategorie;
     @FXML
@@ -93,8 +95,9 @@ public class AddEventController implements Initializable {
     ////////////////
     
     EvenementService eventService = new EvenementService();
-    //AutoCompletition Variables
+    //AutoCompletition Set
     private Set<String> suggets = eventService.getSuggests();
+    
     
  
   
@@ -112,6 +115,8 @@ public class AddEventController implements Initializable {
         categInput.getItems().add("Transport");
         categInput.getItems().add("Pauvreté");
         categInput.getItems().add("Environnement");
+        Set<Integer> setIdAssoc = es.getAllAssociationId();
+        idAssocInput.getItems().addAll(setIdAssoc);
         confirmUpdate.setVisible(false);
         //showEvents();
         filterTable();
@@ -136,11 +141,13 @@ public class AddEventController implements Initializable {
             
         else {           
             String donCateg = categInput.getSelectionModel().getSelectedItem();
+            int assocId = idAssocInput.getSelectionModel().getSelectedItem();
             String cause = causeInput.getText();
             int nbreParticipants = Integer.parseInt(participantInput.getText());
             
             String desc = descInput.getText();
             Evenement e = new Evenement();
+            e.setAssociationId(assocId);
             e.setDonCategorie(donCateg);
             e.setCause(cause);
             e.setNum_participants(nbreParticipants);
@@ -148,7 +155,8 @@ public class AddEventController implements Initializable {
             e.setMontant_collecte(100);
             e.setDescription(desc);       
             es.ajouterEvenement(e);
-            showEvents();
+            //showEvents();
+            filterTable();
   
             //Notification Succées       
             TrayNotification tray = new TrayNotification();
@@ -180,6 +188,7 @@ public class AddEventController implements Initializable {
         eventList = es.showAllEvents();
         
         colID.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+        colIDAssociation.setCellValueFactory(new PropertyValueFactory<>("associationId"));
         colCategorie.setCellValueFactory(new PropertyValueFactory<>("donCategorie"));
         colCause.setCellValueFactory(new PropertyValueFactory<>("cause"));
         colParticip.setCellValueFactory(new PropertyValueFactory<>("num_participants"));
@@ -198,7 +207,8 @@ public class AddEventController implements Initializable {
         if(eventTable.getSelectionModel().getSelectedItem() != null) {
             Evenement e = eventTable.getSelectionModel().getSelectedItem();
             es.supprimerEvenement(e.getEventId());
-            showEvents();
+            //showEvents();
+            filterTable();
             
             
             TrayNotification tray = new TrayNotification();
@@ -267,7 +277,8 @@ public class AddEventController implements Initializable {
         eventTable.setDisable(false);
         updateEventButton.setDisable(false);
         confirmUpdate.setVisible(false);
-        showEvents();
+        //showEvents();
+        filterTable();
     }
     
     
@@ -275,6 +286,7 @@ public class AddEventController implements Initializable {
     public void filterTable(){
         EvenementService es = new EvenementService();        
         colID.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+        colIDAssociation.setCellValueFactory(new PropertyValueFactory<>("associationId"));
         colCategorie.setCellValueFactory(new PropertyValueFactory<>("donCategorie"));
         colCause.setCellValueFactory(new PropertyValueFactory<>("cause"));
         colParticip.setCellValueFactory(new PropertyValueFactory<>("num_participants"));

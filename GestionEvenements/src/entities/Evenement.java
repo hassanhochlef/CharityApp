@@ -13,6 +13,7 @@ import java.util.Date;
  */
 public class Evenement {
     private int eventId;
+    private int associationId;
     private String donCategorie;
     private String cause;
     private int num_participants;
@@ -24,7 +25,8 @@ public class Evenement {
         
     }
 
-    public Evenement(String donCategorie, String cause, int num_participants, Date date_creation, float montant_collecte, String description) {
+    public Evenement(int associationId, String donCategorie, String cause, int num_participants, Date date_creation, float montant_collecte, String description) {
+        this.associationId = associationId;
         this.donCategorie = donCategorie;
         this.cause = cause;
         this.num_participants = num_participants;
@@ -33,14 +35,23 @@ public class Evenement {
         this.description = description;
     }
 
-    public Evenement(int eventId, String donCategorie, String cause, int num_participants, Date date_creation, float montant_collecte, String description) {
+    public Evenement(int eventId, int associationId, String donCategorie, String cause, int num_participants, Date date_creation, float montant_collecte, String description) {
         this.eventId = eventId;
+        this.associationId = associationId;
         this.donCategorie = donCategorie;
         this.cause = cause;
         this.num_participants = num_participants;
         this.date_creation = date_creation;
         this.montant_collecte = montant_collecte;
         this.description = description;
+    }
+
+    public int getAssociationId() {
+        return associationId;
+    }
+
+    public void setAssociationId(int associationId) {
+        this.associationId = associationId;
     }
 
     public int getEventId() {
@@ -50,6 +61,10 @@ public class Evenement {
     public void setEventId(int eventId) {
         this.eventId = eventId;
     }
+
+    
+    
+    
 
     public String getDonCategorie() {
         return donCategorie;
@@ -101,8 +116,12 @@ public class Evenement {
 
     @Override
     public String toString() {
-        return "Evenement{" + "eventId=" + eventId + ", donCategorie=" + donCategorie + ", cause=" + cause + ", num_participants=" + num_participants + ", date_creation=" + date_creation + ", montant_collecte=" + montant_collecte + ", description=" + description + '}';
+        return "Evenement{" + "eventId=" + eventId + ", associationId=" + associationId + ", donCategorie=" + donCategorie + ", cause=" + cause + ", num_participants=" + num_participants + ", date_creation=" + date_creation + ", montant_collecte=" + montant_collecte + ", description=" + description + '}';
     }
+
+    
+
+   
 
     
     

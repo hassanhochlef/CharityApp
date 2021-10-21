@@ -31,15 +31,16 @@ public class EvenementService {
     
     public void ajouterEvenement(Evenement event){
         
-            String req = "INSERT INTO evenement(donCategorie,cause,num_participants,date_creation,montant_collecte,description)"+" VALUES (?,?,?,?,?,?)";
+            String req = "INSERT INTO evenement(associationId, donCategorie,cause,num_participants,date_creation,montant_collecte,description)"+" VALUES (?,?,?,?,?,?,?)";
             try {
             ste = cnx.prepareStatement(req);
-            ste.setString(1, event.getDonCategorie());
-            ste.setString(2, event.getCause());
-            ste.setInt(3, event.getNum_participants());
-            ste.setString(4, event.getDate_creation().toString());
-            ste.setFloat(5, event.getMontant_collecte());
-            ste.setString(6, event.getDescription());
+            ste.setInt(1, event.getAssociationId());
+            ste.setString(2, event.getDonCategorie());
+            ste.setString(3, event.getCause());
+            ste.setInt(4, event.getNum_participants());
+            ste.setString(5, event.getDate_creation().toString());
+            ste.setFloat(6, event.getMontant_collecte());
+            ste.setString(7, event.getDescription());
             ste.executeUpdate();
             System.out.println("Evenment ajouté avec succée !");
             
@@ -86,17 +87,17 @@ public class EvenementService {
     
     public void updateEvent(int id, Evenement event){
         
-        //String req = "UPDATE evenement SET WHERE evenement.id="+id;
-        String req = "UPDATE evenement SET donCategorie=?,cause=?,num_participants=?,date_creation=?,montant_collecte=?,description=? WHERE evenement.eventId=" + id;
+        String req = "UPDATE evenement SET associationId=?,donCategorie=?,cause=?,num_participants=?,date_creation=?,montant_collecte=?,description=? WHERE evenement.eventId=" + id;
         
         try{
             ste = cnx.prepareStatement(req);
-            ste.setString(1, event.getDonCategorie());
-            ste.setString(2, event.getCause());
-            ste.setInt(3, event.getNum_participants());
-            ste.setString(4, event.getDate_creation().toString());
-            ste.setFloat(5, event.getMontant_collecte());
-            ste.setString(6, event.getDescription());
+            ste.setInt(1, event.getAssociationId());
+            ste.setString(2, event.getDonCategorie());
+            ste.setString(3, event.getCause());
+            ste.setInt(4, event.getNum_participants());
+            ste.setString(5, event.getDate_creation().toString());
+            ste.setFloat(6, event.getMontant_collecte());
+            ste.setString(7, event.getDescription());
             ste.executeUpdate();
             System.out.println("Event updated");           
         }
@@ -116,6 +117,7 @@ public class EvenementService {
             while (rs.next()){
                 Evenement e = new Evenement();
                 e.setEventId(rs.getInt("eventId"));
+                e.setAssociationId(rs.getInt("associationId"));
                 e.setDonCategorie(rs.getString("donCategorie"));
                 e.setCause(rs.getString("cause"));
                 e.setNum_participants(rs.getInt("num_participants"));
@@ -188,11 +190,81 @@ public class EvenementService {
         Suggests.addAll(causes);
         Suggests.addAll(categories);
         
-        return Suggests;
-
-        
+        return Suggests;   
     }
-  
+    
+    public Set<Integer> getAllAssociationId(){
+        Set<Integer> ids = new HashSet<>();
+        try{
+        String req = "select userId from user where role='Association'";
+        ste = cnx.prepareStatement(req);
+        ResultSet rs = ste.executeQuery();
+        while (rs.next()){
+            int assocId;
+            assocId = rs.getInt("userId");              
+            ids.add(assocId);               
+            }      
+        }
+        catch(SQLException ex){
+            System.out.println("Erreur retrieving Association IDS");
+        }
+        
+        return ids;
+    }
+    
+    
+    //Permet d'extraire tous les nom des associations ayant créer des évenements
+    public Set<String> getAssocActive(){
+        Set<String> names = new HashSet<>();
+        String assocName;
+        String req = "SELECT user.name from evenement INNER JOIN user ON user.userId = evenement.associationId where user.role='Association' ORDER BY user.name DESC";
+            try {
+            ste = cnx.prepareStatement(req);
+            ResultSet rs = ste.executeQuery();
+            while(rs.next()){
+                assocName = rs.getString("name");
+                names.add(assocName);
+            }
+            
+            
+        } catch (SQLException ex) {
+                System.out.println("Erreur getNombreEvents");
+        }
+        
+        return names;
+    }
+    
+    public String getAssocActive1(){
+        Set<String> names = getAssocActive();
+        String name;
+        name = names.iterator().next();
+        return name;
+    }
+    
+    public String getAssocActive2(){
+        Set<String> names = getAssocActive();
+        int i = 0;
+        for (String assoc : names){
+            if (i==1)
+                return assoc;
+            i++;
+        }
+        return null;
+    }
+    
+    public String getAssocActive3(){
+        Set<String> names = getAssocActive();
+        int i = 0;
+        for (String assoc : names){
+            if (i==2)
+                return assoc;
+            i++;
+        }
+        return null;
+    }
+    
+    
+    
 }
     
 

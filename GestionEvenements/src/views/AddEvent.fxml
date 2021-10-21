@@ -90,7 +90,7 @@
             <TableView fx:id="eventTable" prefHeight="254.0" prefWidth="961.0" stylesheets="@../../../Main/src/css/style1.css">
               <columns>
                 <TableColumn fx:id="colID" prefWidth="108.0" text="ID de l'évenement" />
-                <TableColumn fx:id="colIDAssoc" minWidth="0.0" prefWidth="108.0" text="ID de l'association" />
+                <TableColumn fx:id="colIDAssociation" minWidth="0.0" prefWidth="108.0" text="ID de l'association" />
                   <TableColumn fx:id="colCategorie" minWidth="0.0" prefWidth="111.0" text="Catégorie" />
                   <TableColumn fx:id="colCause" minWidth="0.0" prefWidth="145.0" text="Cause" />
                   <TableColumn fx:id="colParticip" minWidth="0.0" prefWidth="114.0" text="Num Participants" />

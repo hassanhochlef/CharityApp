@@ -38,13 +38,16 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        /*DbConnection mc= DbConnection.getInstance();
+        DbConnection mc= DbConnection.getInstance();
         EvenementService ev = new EvenementService();
-        Date date = new Date(21, 10, 13);
+        /*Date date = new Date(21, 10, 13);
         Evenement e1 = new Evenement("Transport", "Achat de bus", 100, date, 100, "test");
         //ev.ajouterEvenement(e1);
         //ev.supprimerEvenement(4);
         //System.out.println(ev.showAllEvents());*/
+        /*System.out.println(ev.getAssocActive1());
+        System.out.println(ev.getAssocActive2());
+        System.out.println(ev.getAssocActive3());*/
         
     }
     

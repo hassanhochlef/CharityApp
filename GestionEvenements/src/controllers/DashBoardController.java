@@ -6,19 +6,11 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
-import entities.Evenement;
 import java.net.URL;
-import java.sql.Date;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import services.EvenementService;
 
 /**
@@ -55,6 +47,10 @@ public class DashBoardController implements Initializable {
         // TODO
         EvenementService es = new EvenementService();
         totalEvents.setText(String.valueOf(es.getNombreEvents()));
+        
+        assocLabel1.setText(es.getAssocActive1());
+        assocLabel2.setText(es.getAssocActive2());
+        assocLabel3.setText(es.getAssocActive3());
  
     }    
     
