@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1075.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ParticiperEventController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="376.0" styleClass="right-bar" stylesheets="@../css/styleparticipation.css">
+         <children>
+            <VBox layoutY="14.0" prefHeight="200.0" prefWidth="376.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="84.0" prefWidth="316.0">
+                     <children>
+                        <Label text="Participer à un évènement" textFill="#878787">
+                           <font>
+                              <Font name="Ebrima Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="333.0" stylesheets="@../css/styleparticipation.css">
+                     <children>
+                        <TextField fx:id="searchInput" alignment="CENTER" prefHeight="30.0" prefWidth="226.0" promptText="Rechercher un évènement" stylesheets="@../css/styleparticipation.css">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="vboxEventItem" alignment="TOP_CENTER" layoutX="15.0" layoutY="165.0" prefHeight="451.0" prefWidth="344.0" spacing="5.0" styleClass="chosen-event-card" stylesheets="@../css/styleparticipation.css">
+               <children>
+                  <ImageView fx:id="imageCateg" fitHeight="117.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" />
+                  <Pane prefHeight="30.0" prefWidth="324.0" VBox.vgrow="ALWAYS" />
+                  <HBox prefHeight="45.0" prefWidth="262.0">
+                     <children>
+                        <Label fx:id="labelAssoc" text="Association Organisatrice" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="289.0" prefHeight="45.0" prefWidth="262.0">
+                     <children>
+                        <Label fx:id="labelCateg" text="Catégorie de l'évènement" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="311.0" prefHeight="45.0" prefWidth="262.0">
+                     <children>
+                        <Label fx:id="labelNumParti" text="Nombre de Participants" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="334.0" prefHeight="45.0" prefWidth="262.0">
+                     <children>
+                        <Label fx:id="labelCollect" text="Dons Collectés" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <JFXButton prefHeight="26.0" prefWidth="207.0" styleClass="participateBtn" text="Participer" textFill="#828282">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </Pane>
+      <HBox layoutX="376.0" layoutY="279.0" prefHeight="419.0" prefWidth="699.0" spacing="30.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="399.0" prefWidth="432.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+               <children>
+                  <TableView fx:id="eventTable" onMouseClicked="#mouseClickedTable" prefHeight="399.0" prefWidth="338.0" styleClass="noheader" stylesheets="@../css/tableParticip.css">
+                    <columns>
+                      <TableColumn fx:id="idEventCol" prefWidth="158.0" text="Date Création" />
+                      <TableColumn fx:id="nameEventCol" prefWidth="211.0" text="Cause" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="vboxDescript" alignment="CENTER" prefHeight="399.0" prefWidth="280.0" spacing="50.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 15;">
+               <children>
+                  <Label text="Description de l'évènement">
+                     <font>
+                        <Font name="Ebrima" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea fx:id="descriptionText">
+                     <font>
+                        <Font name="Ebrima" size="14.0" />
+                     </font>
+                  </JFXTextArea>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="393.0" layoutY="22.0" prefHeight="200.0" prefWidth="642.0" />
+   </children>
+</AnchorPane>
