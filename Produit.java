@@ -7,35 +7,71 @@ package Edu.esprit.entities;
 
 
 public class Produit {
-    private String id_prod;
-    private String nom_prod;
+    private int productId;
+    private int donorId;
+    private String name;
+    private int quantite;
+    private int prix_approx;
     
     public Produit (){}
-    public Produit(String id_prod,String nom_prod){
-    this.id_prod=id_prod;
-    this.nom_prod=nom_prod;
+    public Produit(int donorId,String name,int quantite,int prix_approx){
+    
+    this.donorId=donorId;
+    this.name=name;
+    this.quantite=quantite;
+    this.prix_approx=prix_approx;
+    
     }
 
-    public String getId_prod() {
-        return id_prod;
+   
+
+    public int getProductId() {
+        return productId;
     }
 
-    public void setId_prod(String id_prod) {
-        this.id_prod = id_prod;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getNom_prod() {
-        return nom_prod;
+    public int getDonorId() {
+        return donorId;
     }
 
-    public void setNom_prod(String nom_prod) {
-        this.nom_prod = nom_prod;
+    public void setDonorId(int donorId) {
+        this.donorId = donorId;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public int getPrix_approx() {
+        return prix_approx;
+    }
+
+    public void setPrix_approx(int prix_approx) {
+        this.prix_approx = prix_approx;
+    }
+
+ 
 
     
    @Override
     public String toString() {
-       return "produit{"+ "id_prod=" + id_prod + ", nom_prod=" + nom_prod + '}';
+       return "produit{"+ "productId=" + productId + ", donorId=" + donorId + ",name=" + name + ",quantite=" + quantite + ", prix_approx" + prix_approx +'}';
     }
     
 }
+
