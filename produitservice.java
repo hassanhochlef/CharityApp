@@ -25,31 +25,38 @@ public class produitservice {
     }
     
     public void ajouterProduit(Produit p){
-        String req ="INSERT INTO produit (id_prod,nom_prod)"+"values (?,?)";
+        String req ="INSERT INTO produit (donorId,name,quantite,prix_approx)values (?,?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
-            ste.setString(1, p.getId_prod());
-            ste.setString(2, p.getNom_prod());
+            ste.setInt(1, p.getDonorId());
+            ste.setString(2, p.getName());
+            ste.setInt(3, p.getQuantite());
+            ste.setInt(4, p.getPrix_approx());
             ste.executeUpdate();
             System.out.println("Produit ajouté");
             
         } catch (SQLException ex) {
-            
+            System.out.println("Erreur Ajout produit");
+            System.out.println(ex.getMessage());
         }
         
     }
-    public List<Produit> afficherProduit(){
+   public List<Produit> afficherProduit(){
     List<Produit> Produits = new ArrayList<>();
-   
+            String sql = "select * from produit";
         try {
-             String sql = "select * from produit";
+             
      
              ste = cnx.prepareStatement(sql);
              ResultSet rs = ste.executeQuery();
+              Produit p = new Produit();
              while (rs.next()) {   
-                 Produit p = new Produit();
-                 p.setId_prod(rs.getString("id"));
-                 p.setNom_prod(rs.getString(20));
+                
+                 p.setProductId(rs.getInt("productId"));
+                 p.setDonorId(rs.getInt("donorId"));
+                 p.setName(rs.getString("name"));
+                 p.setQuantite(rs.getInt("quantite"));
+                 p.setPrix_approx(rs.getInt("prix_approx"));
                  Produits.add(p);
                
             }
@@ -60,17 +67,29 @@ public class produitservice {
     return  Produits;
     
 }
-  
-    public List<Produit> SupprimerProduit(String id_prod){
+  /*
+    public void SupprimerProduit(int ProductId){
+        
+            String req = "DELETE FROM Produit WHERE p.ProductId="+ProductId;
+            try {
+            ste = cnx.prepareStatement(req);
+            ste.executeUpdate();
+            
+            System.out.println("product deleted");
+        } catch (SQLException ex) {
+                System.out.println("Erreur suppression produit");
+        }
+    }*/
+    
+    public List<Produit> SupprimerProduit(int productId){
         List<Produit> Produits = new ArrayList<>() ;
     try {
 
-       String sql = "DELETE FROM Produit WHERE id_prod=?";
+       String sql = "DELETE FROM Produit WHERE productId=?";
        
 
 PreparedStatement statement = cnx.prepareStatement(sql);
-statement.setString(1,id_prod);
-ste.executeUpdate(); 
+statement.setInt(1,productId);
 
 int rowsDeleted = statement.executeUpdate();
 if (rowsDeleted ==1) {
@@ -85,11 +104,12 @@ if (rowsDeleted ==1) {
     }
     return Produits;
 }
-public List<Produit> ModifierProduit(String id_prod, String nom_prod){
+    
+public List<Produit> ModifierProduit(int donorId, String Name,int quantite,int prix_approx){
         List<Produit> Produits = new ArrayList<>() ;
     try {
 
-       String sql = "UPDATE Produit SET id_prod='"+id_prod+"',"+"nom_prod='"+nom_prod+"'where id_prod='"+id_prod+"'";
+       String sql = "UPDATE Produit SET productId='"+donorId+"',"+"Name='"+Name+"'where productId='"+donorId+"'";
 
 PreparedStatement statement = cnx.prepareStatement(sql);
 
