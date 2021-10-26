@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 
 public class Myconnection {
-    public String url ="jdbc:mysql://localhost:3306/produit";
+    public String url ="jdbc:mysql://localhost:3306/bugbustersprojet";
     public String login="root";
     public String pwd ="";
     public Connection cnx;
